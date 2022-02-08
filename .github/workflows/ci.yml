@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v2
+      with:
+        distribution: 'zulu' # See 'Supported distributions' for available options
+        java-version: '11'
+    - run: mvn package
+    - uses: actions/upload-artifact@v2
+      with:
+        name: CLI-menu-server
+        path: target/CLI-menu-server.jar
