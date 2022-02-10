@@ -6,19 +6,25 @@
     "allDeclaredMethods" : true,
     "allPublicMethods" : true,
     "fields" : [
-      { "name" : "algorithm" },
-      { "name" : "file" }
+      { "name" : "server" }
     ]
   },
   {
-    "name" : "picocli.CommandLine$AutoHelpMixin",
+    "name" : "MenuCliDelete",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,
     "allPublicMethods" : true,
     "fields" : [
-      { "name" : "helpRequested" },
-      { "name" : "versionRequested" }
+      { "name" : "id" },
+      { "name" : "menuCli" }
     ]
+  },
+  {
+    "name" : "java.lang.Integer",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
   }
 ]
