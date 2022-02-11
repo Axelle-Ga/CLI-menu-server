@@ -8,13 +8,11 @@ public class TestMockServer {
 
     @BeforeClass
     public void startServer() {
-        mockServer = startClientAndServer(1080);
+        mockServer = ClientAndServer.startClientAndServer(1080);
     }
  
     @AfterClass 
     public void stopServer() { 
         mockServer.stop();
     }
- 
-    // ...
 }
