@@ -25,7 +25,7 @@ public class ListMenuCommand implements Callable<String> {
         URL url = new URL(urlListMenu);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        String response = con.getResponseMessage();
+    
         BufferedReader reponse = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
         String inputLine;
@@ -33,16 +33,22 @@ public class ListMenuCommand implements Callable<String> {
         while ((inputLine = reponse.readLine()) != null) {
             content.append(inputLine);
         }
-        reponse.close();
-        JSONArray JsonContent = new JSONArray(content);
+        
+        JSONArray JsonContent = new JSONArray(content.toString());
         for (int i = 0 ; i < JsonContent.length(); i++) {
             JSONObject menu = JsonContent.getJSONObject(i);
             //int userId = album.getInt("userId");
             //int id = album.getInt("id");
             //String title = album.getString("title");
-            System.out.println(menu);
+            System.out.println("Menu "+ i + " :");
+            System.out.println(menu.getString("name"));
+            JSONArray dishes =  menu.getJSONArray("dishes");
+            for(int index = 0; index<dishes.length() ; index++){
+                System.out.println(" - " + dishes.getJSONObject(index).getString("name"));
+            }
+            System.out.println("\n");
         }
-        System.out.println(content);
+
         return null;
     }
 }
