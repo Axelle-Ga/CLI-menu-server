@@ -2,13 +2,13 @@ import picocli.CommandLine;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.Callable;
 
 @CommandLine.Command(
         name = "delete"
 )
-public class MenuCliDelete implements Runnable {
+public class MenuCliDelete implements Callable {
 
     @CommandLine.Parameters(index = "0", description = "Id of the menu to delete")
     private Integer id;
@@ -17,7 +17,7 @@ public class MenuCliDelete implements Runnable {
     private MenuCli menuCli;
 
     @Override
-    public void run() {
+    public String call() {
         System.out.println("DeleteMenu");
         String urlString = this.menuCli.getServer()+"menus/"+this.id;
         try {
@@ -26,10 +26,10 @@ public class MenuCliDelete implements Runnable {
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("DELETE");
             int status = con.getResponseCode();
-            System.out.println(status);
+            return(String.valueOf(status));
         }
         catch (IOException e1){
-            System.out.println("Exception");
+            return("Exception");
         }
 
 
