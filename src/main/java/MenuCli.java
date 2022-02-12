@@ -16,7 +16,7 @@ import java.util.concurrent.Callable;
         })
 class MenuCli implements Callable<Integer> {
 
-    @Option(names = {"-s", "--server"}, description = "server adress")
+    @Option(names = {"-s", "--server-url"}, description = "server adress")
     private String server = "https://menu-server-axelle.herokuapp.com/";
 
     @Override
