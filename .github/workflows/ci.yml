@@ -15,7 +15,7 @@ jobs:
         name: CLI-menu-server
         path: target/MenuCli-jar-with-dependencies.jar
 
-  build:
+  test:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
