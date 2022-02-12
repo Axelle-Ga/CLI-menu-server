@@ -6,7 +6,7 @@ import java.net.URL;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(
-        name = "delete"
+        name = "delete-menu"
 )
 public class MenuCliDelete implements Callable {
 
