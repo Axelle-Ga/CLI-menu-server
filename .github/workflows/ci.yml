@@ -9,12 +9,11 @@ jobs:
       with:
         distribution: 'zulu' # See 'Supported distributions' for available options
         java-version: '11'
-    - run: mvn clean compile assembly:single
+    - run: mvn package
     - uses: actions/upload-artifact@v2
       with:
         name: CLI-menu-server
-        path: target/MenuCli-jar-with-dependencies.jar
-
+        path: target/MenuCli.jar
   test:
       runs-on: ubuntu-20.04
       steps:
