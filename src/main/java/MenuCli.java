@@ -16,7 +16,7 @@ import java.util.concurrent.Callable;
         description = "Interact with menus",
         subcommands = {
                 MenuCliDelete.class,
-                ListMenusCommand.class,
+                ListMenuCommand.class,
         })
 class MenuCli implements Callable<Integer> {
 
