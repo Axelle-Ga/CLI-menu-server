@@ -18,7 +18,6 @@ public class MenuCliDelete implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        System.out.println("DeleteMenu");
         String urlString = this.menuCli.getServer()+"menus/"+this.id;
         try {
             System.out.println(urlString);
