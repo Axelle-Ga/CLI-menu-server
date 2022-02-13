@@ -1,13 +1,22 @@
 [
   {
+    "name" : "ListMenuCommand",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "mainCommande" }
+    ]
+  },
+  {
     "name" : "MenuCli",
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,
     "allPublicMethods" : true,
     "fields" : [
-      { "name" : "algorithm" },
-      { "name" : "file" }
+      { "name" : "server" }
     ]
   },
   {
