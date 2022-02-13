@@ -1,10 +1,13 @@
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
+
 import picocli.CommandLine.Parameters;
 
 import java.io.File;
 import java.math.BigInteger;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.util.concurrent.Callable;
@@ -21,7 +24,8 @@ class MenuCli implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception { // your business logic goes here...
-        return 0;
+        System.out.println(this.server);
+        return 0; 
     }
 
     // this example implements Callable, so parsing, error handling and handling user
