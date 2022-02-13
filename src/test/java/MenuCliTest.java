@@ -35,8 +35,16 @@ public class MenuCliTest {
     @Test
     public void testDeleteMenuCommandLine() {
 
-        String[] args = { "--server-url", addressServer,"delete-menu", "0"};
-        int exitCode = new CommandLine(new MenuCliDelete()).execute(args);
+        String[] args = { "--server-url", addressServer, "delete-menu", "--","0"};
+        int exitCode = new CommandLine(new MenuCli()).execute(args);
         assertEquals(0,exitCode);
+    }
+
+    @Test
+    public void testDeleteMenuCommandLineNotExisting() {
+
+        String[] args = { "--server-url", addressServer, "delete-menu", "--","1"};
+        int exitCode = new CommandLine(new MenuCli()).execute(args);
+        assertEquals(1,exitCode);
     }
 }

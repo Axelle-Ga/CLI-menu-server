@@ -1,19 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: MenuCliTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.378 sec <<< FAILURE!
-testDeleteMenuCommandLine(MenuCliTest)  Time elapsed: 6.428 sec  <<< ERROR!
-java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
-	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$getFirstValidStrategy$4(DockerClientProviderStrategy.java:156)
-	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
-	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:148)
-	at org.testcontainers.DockerClientFactory.getOrInitializeStrategy(DockerClientFactory.java:146)
-	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:188)
-	at org.testcontainers.DockerClientFactory$1.getDockerClient(DockerClientFactory.java:101)
-	at com.github.dockerjava.api.DockerClientDelegate.authConfig(DockerClientDelegate.java:107)
-	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:316)
-	at org.testcontainers.containers.GenericContainer.starting(GenericContainer.java:1066)
-	at org.testcontainers.containers.FailureDetectingExternalResource$1.evaluate(FailureDetectingExternalResource.java:29)
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 81.728 sec <<< FAILURE!
+testDeleteMenuCommandLine(MenuCliTest)  Time elapsed: 38.501 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<1>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at MenuCliTest.testDeleteMenuCommandLine(MenuCliTest.java:40)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.testcontainers.containers.FailureDetectingExternalResource$1.evaluate(FailureDetectingExternalResource.java:30)
 	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
