@@ -24,7 +24,7 @@ class MenuCli implements Callable<Integer> {
     @Override
     public Integer call() throws Exception { // your business logic goes here...
         System.out.println(this.server);
-        return 0;
+        return 0; 
     }
 
     // this example implements Callable, so parsing, error handling and handling user

@@ -12,12 +12,11 @@ import java.net.URL;
 
 import java.util.concurrent.Callable;
 
-@Command(name = "list-menus")
+@Command(name = "list-menu")
 public class ListMenuCommand implements Callable<String> {
 
     @ParentCommand
     private MenuCli mainCommande;
-
 
     @Override
     public String call() throws Exception {
@@ -37,9 +36,6 @@ public class ListMenuCommand implements Callable<String> {
         JSONArray JsonContent = new JSONArray(content.toString());
         for (int i = 0 ; i < JsonContent.length(); i++) {
             JSONObject menu = JsonContent.getJSONObject(i);
-            //int userId = album.getInt("userId");
-            //int id = album.getInt("id");
-            //String title = album.getString("title");
             System.out.println("Menu "+ i + " :");
             System.out.println(menu.getString("name"));
             JSONArray dishes =  menu.getJSONArray("dishes");
