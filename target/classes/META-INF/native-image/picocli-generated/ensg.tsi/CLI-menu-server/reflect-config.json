@@ -4,7 +4,10 @@
     "allDeclaredConstructors" : true,
     "allPublicConstructors" : true,
     "allDeclaredMethods" : true,
-    "allPublicMethods" : true
+    "allPublicMethods" : true,
+    "fields" : [
+      { "name" : "server" }
+    ]
   },
   {
     "name" : "MenuCliDelete",
