@@ -23,7 +23,6 @@ jobs:
           distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: '11'
       - run: mvn clean verify
-
   release:
     runs-on: ubuntu-20.04
     needs: build
