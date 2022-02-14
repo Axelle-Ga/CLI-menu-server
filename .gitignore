@@ -25,6 +25,8 @@ hs_err_pid*
 #IntelliJ
 .idea
 
+#Vscode
+.vscode
 
 #Maven
 

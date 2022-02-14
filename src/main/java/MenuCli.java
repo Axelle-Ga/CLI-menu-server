@@ -12,13 +12,15 @@ import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.util.concurrent.Callable;
 
-@Command(name = "menucli", mixinStandardHelpOptions = true, version = "checksum 4.0",subcommands = {
-        ListMenuCommand.class
-},
-        description = "Prints the checksum (SHA-256 by default) of a file to STDOUT.")
+@Command(name = "menucli",
+        description = "Interact with menus",
+        subcommands = {
+                MenuCliDelete.class,
+                ListMenuCommand.class,
+        })
 class MenuCli implements Callable<Integer> {
 
-    @Option(names = "--server-url", description = "Address of the server to call")
+    @Option(names = {"-s", "--server-url"}, description = "server adress")
     private String server = "https://menu-server-axelle.herokuapp.com/";
 
     @Override
